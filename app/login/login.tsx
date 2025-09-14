@@ -2,16 +2,13 @@ import React from "react";
 
 export default function Login() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-white">
-      <div className="w-full max-w-md p-8 bg-white rounded-xl shadow-md">
-        <h2 className="text-3xl font-bold mb-8 text-gray-800">Sign in.</h2>
-        <form className="space-y-6">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Email address
+    <div className="min-h-screen flex flex-col justify-center items-center bg-base-100">
+      <div className="w-full max-w-md p-8 bg-base-100 rounded-xl shadow-xl">
+        <h2 className="text-3xl font-bold">Sign in.</h2>
+        <form className="flex flex-col gap-4">
+          <div className="form-control">
+            <label className="label" htmlFor="email">
+              <span className="label-text">Email address</span>
             </label>
             <input
               id="email"
@@ -20,15 +17,12 @@ export default function Login() {
               autoComplete="email"
               required
               placeholder="Your Email"
-              className="mt-1 block w-full rounded-lg border-0 bg-gray-100 py-3 px-4 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="input input-bordered w-full"
             />
           </div>
-          <div>
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700 mb-1"
-            >
-              Password
+          <div className="form-control">
+            <label className="label" htmlFor="password">
+              <span className="label-text">Password</span>
             </label>
             <input
               id="password"
@@ -37,52 +31,35 @@ export default function Login() {
               autoComplete="current-password"
               required
               placeholder="Your Password"
-              className="mt-1 block w-full rounded-lg border-0 bg-gray-100 py-3 px-4 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+              className="input input-bordered w-full"
             />
           </div>
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
+            <label className="label cursor-pointer gap-2">
               <input
                 id="remember-me"
                 name="remember-me"
                 type="checkbox"
-                className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                className="checkbox checkbox-primary"
               />
-              <label
-                htmlFor="remember-me"
-                className="ml-2 block text-sm text-gray-700"
-              >
-                Remember me
-              </label>
-            </div>
-            <div className="text-sm">
-              <a
-                href="#"
-                className="font-medium text-blue-600 hover:text-blue-500"
-              >
-                Forgot your password?
-              </a>
-            </div>
+              <span className="label-text">Remember me</span>
+            </label>
+            <a href="#" className="link link-primary text-sm">
+              Forgot your password?
+            </a>
           </div>
-          <button
-            type="submit"
-            className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          >
+          <button type="submit" className="btn btn-primary w-full">
             Sign in
           </button>
         </form>
-        <div className="flex items-center my-6">
-          <div className="flex-grow border-t border-gray-200"></div>
-          <span className="mx-4 text-gray-400">Or continue with</span>
-          <div className="flex-grow border-t border-gray-200"></div>
-        </div>
+        <div className="divider my-6">Or continue with</div>
         <button
           type="button"
-          className="w-full flex items-center justify-center py-3 px-4 border border-gray-200 rounded-lg shadow-sm bg-white text-base font-medium text-gray-700 hover:bg-gray-50"
+          className="btn btn-outline w-full flex items-center justify-center gap-2"
           onClick={() => {}}
         >
           <svg
-            className="w-5 h-5 mr-2"
+            className="w-5 h-5"
             viewBox="0 0 48 48"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
