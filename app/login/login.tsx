@@ -1,5 +1,6 @@
 import React from "react";
-import GoogleLogoSVG from "./google-logo-svg";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 
 export default function Login() {
   return (
@@ -55,14 +56,17 @@ export default function Login() {
             </button>
           </form>
           <div className="divider m-0">Or continue with</div>
-          <button
-            type="button"
-            className="btn btn-outline w-full flex items-center justify-center gap-2"
-            onClick={() => {}}
-          >
-            <GoogleLogoSVG />
-            Log in with Google
-          </button>
+          <div className="flex justify-center">
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                console.log(jwtDecode(credentialResponse.credential!));
+              }}
+              onError={() => {
+                console.error("Google login failed");
+              }}
+              auto_select={true}
+            />
+          </div>
         </div>
       </div>
     </div>
