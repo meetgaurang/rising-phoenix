@@ -8,7 +8,6 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
-import { GoogleOAuthProvider } from "@react-oauth/google";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
@@ -26,7 +25,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="corporate">
+    <html lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -42,16 +41,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-// TODO: A temp client ID, it will be replaced with env variable
-const CLIENT_ID =
-  "354793910982-hahet42obvdc2hq8sp6kriqhmmv29af5.apps.googleusercontent.com";
-
 export default function App() {
-  return (
-    <GoogleOAuthProvider clientId={CLIENT_ID}>
-      <Outlet />
-    </GoogleOAuthProvider>
-  );
+  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
