@@ -1,68 +1,35 @@
-import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Label } from "~/components/ui/label";
 import { Input } from "~/components/ui/input";
-import { Button } from "~/components/ui/button";
+import { Label } from "~/components/ui/label";
+import { loginFormSchema, type LoginFormValues } from "./loginFormSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Checkbox } from "~/components/ui/checkbox";
-import { supabaseClient } from "~/supabase";
+import { Button } from "~/components/ui/button";
 
-const loginSchema = z.object({
-  email: z.email({ message: "Invalid email address" }),
-  password: z
-    .string()
-    .min(6, { message: "Password must be at least 6 characters" }),
-  remember: z.boolean().optional(),
-});
+export type LoginFormProps = {
+  onSubmit: (data: LoginFormValues) => Promise<void>;
+  onGoogleLogin: () => void;
+  loading: boolean;
+};
 
-type LoginFormValues = z.infer<typeof loginSchema>;
-
-export default function Login({ onSubmit, loading }) {
-  const [session, setSession] = useState(null);
-
-  useEffect(() => {
-    supabaseClient.auth.getSession().then(({ data: { session } }) => {
-      setSession(session);
-    });
-    const {
-      data: { subscription },
-    } = supabaseClient.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    });
-    return () => subscription.unsubscribe();
-  }, []);
-
-  const handleGoogleLogin = async (event) => {
-    event.preventDefault();
-    // setLoading(true);
-    const { error } = await supabaseClient.auth.signInWithOAuth({
-      provider: "google",
-    });
-    if (error) {
-      alert(error.message);
-    } else {
-      alert("Sign in error..");
-    }
-    // setLoading(false);
-  };
-
+export function LoginForm({
+  onGoogleLogin,
+  loading,
+  onSubmit,
+}: LoginFormProps) {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginFormValues>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(loginFormSchema),
   });
 
   return (
     <div className="min-h-screen flex flex-col justify-center items-center bg-background">
       <div className="w-full max-w-md p-8 bg-card rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-8 text-foreground">Sign in.</h2>
-        <form
-          className="flex flex-col gap-4"
-          onSubmit={handleSubmit(handleGoogleLogin)}
-        >
+        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control">
             <Label htmlFor="email">Email address</Label>
             <Input
@@ -111,7 +78,7 @@ export default function Login({ onSubmit, loading }) {
           variant="outline"
           className="w-full flex items-center justify-center gap-2"
           type="button"
-          onClick={handleGoogleLogin}
+          onClick={onGoogleLogin}
         >
           {/* Google SVG icon */}
           <svg

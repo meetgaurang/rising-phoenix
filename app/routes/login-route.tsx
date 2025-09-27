@@ -1,5 +1,5 @@
+import { LoginContainer } from "~/login/LoginContainer";
 import type { Route } from "./+types/home";
-import Login from "~/login/login";
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -9,5 +9,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function LoginRoute() {
-  return <Login onSubmit={async (data) => console.log(data)} loading={false} />;
+  return <LoginContainer />;
 }
