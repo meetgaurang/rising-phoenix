@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabaseClient } from "~/supabase";
-import type { LoginFormValues } from "./loginFormSchema";
+import { type LoginFormValues } from "./loginFormSchema";
 import { Login } from "./login";
 
 export function LoginContainer() {
