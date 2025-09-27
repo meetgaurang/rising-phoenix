@@ -1,0 +1,1 @@
+- Added 'cursor-pointer' effect to button

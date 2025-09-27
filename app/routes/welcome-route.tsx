@@ -1,13 +1,13 @@
 import type { Route } from "./+types/welcome-route";
-import { Welcome } from "../welcome/welcome";
+import { WelcomeContainer } from "~/welcome/WelcomeContainer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "Learning Platform" },
+    { name: "description", content: "Welcome to the Learning Platform!" },
   ];
 }
 
 export default function WelcomeRoute() {
-  return <Welcome />;
+  return <WelcomeContainer />;
 }

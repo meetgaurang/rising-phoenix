@@ -1,5 +1,4 @@
 import type { Route } from "./+types/home-route";
-import { Welcome } from "../welcome/welcome";
 import { HomeContainer } from "~/home/HomeContainer";
 
 export function meta({}: Route.MetaArgs) {
