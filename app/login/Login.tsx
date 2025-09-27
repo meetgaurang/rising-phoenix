@@ -1,6 +1,5 @@
-import { type LoginFormValues } from "./loginFormSchema";
-
 import { LoginForm } from "./LoginForm";
+import type { LoginFormValues } from "./loginFormSchema";
 
 export type LoginProps = {
   onSubmit: (data: LoginFormValues) => Promise<void>;
