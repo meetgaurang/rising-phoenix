@@ -16,12 +16,15 @@ type Pages = {
   "/login": {
     params: {};
   };
+  "/home": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/login";
+    page: "/" | "/login" | "/home";
   };
   "routes/welcome-route.tsx": {
     id: "routes/welcome-route";
@@ -30,5 +33,9 @@ type RouteFiles = {
   "./routes/login-route.tsx": {
     id: "routes/login-route";
     page: "/login";
+  };
+  "./routes/home-route.tsx": {
+    id: "routes/home-route";
+    page: "/home";
   };
 };

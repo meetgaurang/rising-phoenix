@@ -1,5 +1,5 @@
 import { LoginContainer } from "~/login/LoginContainer";
-import type { Route } from "./+types/home";
+import type { Route } from "./+types/login-route";
 
 export function meta({}: Route.MetaArgs) {
   return [
