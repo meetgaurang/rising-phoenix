@@ -8,6 +8,6 @@ export function meta({}: Route.MetaArgs) {
   ];
 }
 
-export default function HomeRoute() {
+export default function WelcomeRoute() {
   return <Welcome />;
 }

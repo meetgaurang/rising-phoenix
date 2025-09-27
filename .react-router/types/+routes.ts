@@ -23,8 +23,8 @@ type RouteFiles = {
     id: "root";
     page: "/" | "/login";
   };
-  "routes/home-route.tsx": {
-    id: "routes/home-route";
+  "routes/welcome-route.tsx": {
+    id: "routes/welcome-route";
     page: "/";
   };
   "./routes/login-route.tsx": {
