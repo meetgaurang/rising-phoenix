@@ -8,8 +8,10 @@ import {
   type SessionDetails,
 } from "./AuthContext";
 import { ScreenCenter } from "~/components/ui/ScreenCenter";
+import { Navigate, useNavigate } from "react-router";
 
 export function AuthProvider({ children }: PropsWithChildren) {
+  const navigate = useNavigate();
   const [session, setSession] = useState<SessionDetails | undefined>(null);
   const [loading, setLoading] = useState(true);
 
@@ -31,6 +33,9 @@ export function AuthProvider({ children }: PropsWithChildren) {
           setSession(mapSessionDetails(sessionDetails));
         } else {
           setSession(undefined);
+        }
+        if (_event === "SIGNED_IN") {
+          navigate("/dashboard");
         }
         setLoading(false);
       }
