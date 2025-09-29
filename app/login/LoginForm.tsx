@@ -7,7 +7,7 @@ import { Checkbox } from "~/components/ui/checkbox";
 import { Button } from "~/components/ui/button";
 
 export type LoginFormProps = {
-  onSubmit: (data: LoginFormValues) => Promise<void>;
+  onEmailLogin: (data: LoginFormValues) => Promise<void>;
   onGoogleLogin: () => void;
   loading: boolean;
 };
@@ -15,7 +15,7 @@ export type LoginFormProps = {
 export function LoginForm({
   onGoogleLogin,
   loading,
-  onSubmit,
+  onEmailLogin,
 }: LoginFormProps) {
   const {
     register,
@@ -29,7 +29,10 @@ export function LoginForm({
     <div className="min-h-screen flex flex-col justify-center items-center bg-background">
       <div className="w-full max-w-md p-8 bg-card rounded-xl shadow-xl">
         <h2 className="text-3xl font-bold mb-8 text-foreground">Sign in.</h2>
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit(onEmailLogin)}
+        >
           <div className="form-control">
             <Label htmlFor="email">Email address</Label>
             <Input
