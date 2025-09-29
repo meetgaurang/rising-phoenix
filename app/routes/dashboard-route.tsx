@@ -3,8 +3,8 @@ import { DashboardContainer } from "~/dashboard/DashboardContainer";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Welcome <user_name>!" },
-    { name: "description", content: "Dashboard page!" },
+    { title: "Welcome!" },
+    { name: "description", content: "Dashboard page" },
   ];
 }
 

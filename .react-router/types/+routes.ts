@@ -34,6 +34,10 @@ type RouteFiles = {
     id: "routes/login-route";
     page: "/login";
   };
+  "./routes/protected-layout.tsx": {
+    id: "routes/protected-layout";
+    page: "/dashboard";
+  };
   "./routes/dashboard-route.tsx": {
     id: "routes/dashboard-route";
     page: "/dashboard";

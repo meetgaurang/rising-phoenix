@@ -1,4 +1,4 @@
-import { useAuth } from "~/core/AuthProvider";
+import { useAuth } from "~/core/AuthContext";
 
 export function DashboardContainer() {
   const auth = useAuth();
