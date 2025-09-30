@@ -1,0 +1,4 @@
+{
+  // This shows the number of references above functions and classes
+  "typescript.referencesCodeLens.enabled": true
+}
