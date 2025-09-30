@@ -1,10 +1,10 @@
-import { useForm } from "react-hook-form";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-import { loginFormSchema, type LoginFormValues } from "./loginFormSchema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { Checkbox } from "~/components/ui/checkbox";
-import { Button } from "~/components/ui/button";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import { Button } from '~/components/ui/button';
+import { Checkbox } from '~/components/ui/checkbox';
+import { Input } from '~/components/ui/input';
+import { Label } from '~/components/ui/label';
+import { type LoginFormValues, loginFormSchema } from './loginFormSchema';
 
 export type LoginFormProps = {
   onEmailLogin: (data: LoginFormValues) => Promise<void>;
@@ -39,8 +39,8 @@ export function LoginForm({
               id="email"
               type="email"
               placeholder="Your Email"
-              {...register("email")}
-              className={errors.email ? "input-error" : ""}
+              {...register('email')}
+              className={errors.email ? 'input-error' : ''}
             />
             {errors.email && (
               <span className="text-error text-xs mt-1">
@@ -54,8 +54,8 @@ export function LoginForm({
               id="password"
               type="password"
               placeholder="Your Password"
-              {...register("password")}
-              className={errors.password ? "input-error" : ""}
+              {...register('password')}
+              className={errors.password ? 'input-error' : ''}
             />
             {errors.password && (
               <span className="text-error text-xs mt-1">
@@ -65,7 +65,7 @@ export function LoginForm({
           </div>
           <div className="flex items-center justify-between">
             <label className="flex items-center gap-2 cursor-pointer">
-              <Checkbox id="remember" {...register("remember")} />
+              <Checkbox id="remember" {...register('remember')} />
               <span>Remember me</span>
             </label>
             <a href="#" className="text-sm text-primary underline">
@@ -73,7 +73,7 @@ export function LoginForm({
             </a>
           </div>
           <Button type="submit" className="w-full" disabled={loading}>
-            {loading ? "Signing in..." : "Sign in"}
+            {loading ? 'Signing in...' : 'Sign in'}
           </Button>
         </form>
         <div className="divider my-6 text-center">Or continue with</div>

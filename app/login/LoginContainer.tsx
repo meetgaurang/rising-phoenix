@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { supabaseClient } from "~/supabase";
-import { type LoginFormValues } from "./loginFormSchema";
-import { useNavigate } from "react-router";
-import { Login } from "./Login";
+import { useState } from 'react';
+import { useNavigate } from 'react-router';
+import { supabaseClient } from '~/supabase';
+import { Login } from './Login';
+import type { LoginFormValues } from './loginFormSchema';
 
 export function LoginContainer() {
   const navigate = useNavigate();
@@ -11,7 +11,7 @@ export function LoginContainer() {
   const handleGoogleLogin = async () => {
     setLoading(true);
     const { error, data } = await supabaseClient.auth.signInWithOAuth({
-      provider: "google",
+      provider: 'google',
     });
     if (error) {
       console.error(error.message);

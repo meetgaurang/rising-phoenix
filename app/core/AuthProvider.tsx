@@ -1,14 +1,14 @@
-import type { Session } from "@supabase/supabase-js";
-import { Spinner } from "components/ui/shadcn-io/spinner";
-import { useEffect, useState, type PropsWithChildren } from "react";
-import { supabaseClient } from "~/supabase";
+import type { Session } from '@supabase/supabase-js';
+import { Spinner } from 'components/ui/shadcn-io/spinner';
+import { type PropsWithChildren, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router';
+import { ScreenCenter } from '~/components/ui/ScreenCenter';
+import { supabaseClient } from '~/supabase';
 import {
   AuthContext,
   mapSessionDetails,
   type SessionDetails,
-} from "./AuthContext";
-import { ScreenCenter } from "~/components/ui/ScreenCenter";
-import { Navigate, useNavigate } from "react-router";
+} from './AuthContext';
 
 export function AuthProvider({ children }: PropsWithChildren) {
   const navigate = useNavigate();
@@ -34,11 +34,11 @@ export function AuthProvider({ children }: PropsWithChildren) {
         } else {
           setSession(undefined);
         }
-        if (_event === "SIGNED_IN") {
-          navigate("/dashboard");
+        if (_event === 'SIGNED_IN') {
+          navigate('/dashboard');
         }
         setLoading(false);
-      }
+      },
     );
 
     return () => subscription.unsubscribe();

@@ -1,12 +1,12 @@
-import { LoginContainer } from "~/login/LoginContainer";
-import type { Route } from "./+types/login-route";
+import { LoginContainer } from '~/login/LoginContainer';
+import type { Route } from './+types/login-route';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Learning Platform" },
+    { title: 'Learning Platform' },
     {
-      name: "description",
-      content: "Login to your Learning Platform account!",
+      name: 'description',
+      content: 'Login to your Learning Platform account!',
     },
   ];
 }

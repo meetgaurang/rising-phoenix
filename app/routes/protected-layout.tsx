@@ -1,5 +1,5 @@
-import { Outlet } from "react-router";
-import { ProtectedRoute } from "~/core/ProtectedRoute";
+import { Outlet } from 'react-router';
+import { ProtectedRoute } from '~/core/ProtectedRoute';
 
 export default function ProtectedLayout() {
   return (

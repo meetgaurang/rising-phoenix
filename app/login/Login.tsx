@@ -1,5 +1,5 @@
-import { LoginForm } from "./LoginForm";
-import type { LoginFormValues } from "./loginFormSchema";
+import { LoginForm } from './LoginForm';
+import type { LoginFormValues } from './loginFormSchema';
 
 export type LoginProps = {
   onEmailLogin: (data: LoginFormValues) => Promise<void>;

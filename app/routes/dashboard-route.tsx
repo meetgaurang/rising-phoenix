@@ -1,10 +1,10 @@
-import type { Route } from "./+types/dashboard-route";
-import { DashboardContainer } from "~/dashboard/DashboardContainer";
+import { DashboardContainer } from '~/dashboard/DashboardContainer';
+import type { Route } from './+types/dashboard-route';
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Welcome!" },
-    { name: "description", content: "Dashboard page" },
+    { title: 'Welcome!' },
+    { name: 'description', content: 'Dashboard page' },
   ];
 }
 

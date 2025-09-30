@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router";
-import { Button } from "~/components/ui/button";
-import { H1 } from "~/components/ui/typography";
+import { useNavigate } from 'react-router';
+import { Button } from '~/components/ui/button';
+import { H1 } from '~/components/ui/typography';
 
 export function WelcomeContainer() {
   const navigate = useNavigate();
@@ -16,7 +16,7 @@ export function WelcomeContainer() {
             type="button"
             className="w-full"
             onClick={() => {
-              navigate("/login");
+              navigate('/login');
             }}
           >
             Sign In
