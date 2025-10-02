@@ -1,7 +1,8 @@
 import { LoginContainer } from '~/login/LoginContainer';
 import type { Route } from './+types/login-route';
 
-export function meta({}: Route.MetaArgs) {
+// biome-ignore lint/correctness/noUnusedFunctionParameters: Might be used later
+export function meta(args: Route.MetaArgs) {
   return [
     { title: 'Learning Platform' },
     {

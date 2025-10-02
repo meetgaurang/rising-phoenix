@@ -64,10 +64,14 @@ export function LoginForm({
             )}
           </div>
           <div className="flex items-center justify-between">
-            <label className="flex items-center gap-2 cursor-pointer">
+            <label
+              htmlFor="remember"
+              className="flex items-center gap-2 cursor-pointer"
+            >
               <Checkbox id="remember" {...register('remember')} />
               <span>Remember me</span>
             </label>
+            {/** biome-ignore lint/a11y/useValidAnchor: TODO: Implement forgot password functionality */}
             <a href="#" className="text-sm text-primary underline">
               Forgot your password?
             </a>
@@ -90,6 +94,7 @@ export function LoginForm({
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
+            <title>Google logo</title>
             <g clipPath="url(#clip0_17_40)">
               <path
                 d="M47.5 24.5C47.5 22.6 47.3 20.8 47 19H24V29.5H37.4C36.7 33.1 34.1 36 30.7 37.7V44H38.2C43 40.1 47.5 33.2 47.5 24.5Z"

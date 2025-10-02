@@ -1,4 +1,6 @@
 {
   // This shows the number of references above functions and classes
-  "typescript.referencesCodeLens.enabled": true
+  "typescript.referencesCodeLens.enabled": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "editor.formatOnSave": true
 }
