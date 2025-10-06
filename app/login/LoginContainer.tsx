@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router';
 import { supabaseClient } from '~/supabase';
 import { Login } from './Login';
 import type { LoginFormValues } from './loginFormSchema';
 
 export function LoginContainer() {
-  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
   const handleGoogleLogin = async () => {

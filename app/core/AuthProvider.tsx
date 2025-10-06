@@ -1,7 +1,7 @@
 import type { Session } from '@supabase/supabase-js';
 import { Spinner } from 'components/ui/shadcn-io/spinner';
 import { type PropsWithChildren, useEffect, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 import { ScreenCenter } from '~/components/ui/ScreenCenter';
 import { supabaseClient } from '~/supabase';
 import {
