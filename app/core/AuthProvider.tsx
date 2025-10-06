@@ -42,7 +42,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     );
 
     return () => subscription.unsubscribe();
-  }, []);
+  }, [navigate]);
 
   if (loading) {
     return (
