@@ -24,8 +24,15 @@ export const AuthContext = createContext<SessionDetails | undefined>(undefined);
 
 export function useAuth() {
   const context = useContext(AuthContext);
+  return context; // Allow undefined for unauthenticated users
+}
+
+export function useAuthRequired() {
+  const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider');
+    throw new Error(
+      'useAuthRequired must be used within an AuthProvider and user must be authenticated',
+    );
   }
   return context;
 }

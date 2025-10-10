@@ -1,3 +1,4 @@
+import { PublicRoute } from '~/core/PublicRoute';
 import { LoginContainer } from '~/login/LoginContainer';
 import type { Route } from './+types/login-route';
 
@@ -13,5 +14,9 @@ export function meta(args: Route.MetaArgs) {
 }
 
 export default function LoginRoute() {
-  return <LoginContainer />;
+  return (
+    <PublicRoute>
+      <LoginContainer />
+    </PublicRoute>
+  );
 }

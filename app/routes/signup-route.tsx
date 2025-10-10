@@ -1,3 +1,4 @@
+import { PublicRoute } from '~/core/PublicRoute';
 import { SignUpContainer } from '~/signup/SignUpContainer';
 import type { Route } from './+types/signup-route';
 
@@ -13,5 +14,9 @@ export function meta(args: Route.MetaArgs) {
 }
 
 export default function SignUpRoute() {
-  return <SignUpContainer />;
+  return (
+    <PublicRoute>
+      <SignUpContainer />
+    </PublicRoute>
+  );
 }

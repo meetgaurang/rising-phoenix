@@ -6,7 +6,7 @@ import { useAuth } from './AuthContext';
 export function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const auth = useAuth();
 
-  if (!auth?.user) {
+  if (!auth) {
     // 🚪 Not logged in → send to login
     return <Navigate to="/login" replace />;
   }
