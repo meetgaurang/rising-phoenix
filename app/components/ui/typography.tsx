@@ -5,3 +5,7 @@ export function H1(props: { children: React.ReactNode }) {
     </h1>
   );
 }
+
+export function TextMuted(props: { children: React.ReactNode }) {
+  return <p className="text-muted-foreground text-sm">{props.children}</p>;
+}
