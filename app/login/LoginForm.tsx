@@ -40,7 +40,7 @@ export function LoginForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="m@example.com"
+                  placeholder="Email address"
                   {...register('email')}
                   className={errors.email ? 'input-error' : ''}
                 />
@@ -64,6 +64,7 @@ export function LoginForm({
                 <Input
                   id="password"
                   type="password"
+                  placeholder="Password"
                   {...register('password')}
                   className={errors.password ? 'input-error' : ''}
                 />
@@ -93,7 +94,7 @@ export function LoginForm({
               onClick={onGoogleLogin}
             >
               <GoogleSVGIcon />
-              Login with Google
+              Continue with Google
             </Button>
           </div>
 

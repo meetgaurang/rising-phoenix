@@ -82,7 +82,7 @@ export function SignUpForm({
                 <Input
                   id="email"
                   type="email"
-                  placeholder="Email"
+                  placeholder="Email address"
                   {...register('email')}
                   className={errors.email ? 'border-red-500' : ''}
                 />

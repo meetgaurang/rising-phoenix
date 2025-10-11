@@ -33,6 +33,10 @@ type RouteFiles = {
     id: 'routes/welcome-route';
     page: '/';
   };
+  './routes/auth-layout.tsx': {
+    id: 'routes/auth-layout';
+    page: '/login' | '/signup';
+  };
   './routes/login-route.tsx': {
     id: 'routes/login-route';
     page: '/login';

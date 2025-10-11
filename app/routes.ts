@@ -7,9 +7,12 @@ import {
 
 export default [
   index('routes/welcome-route.tsx'),
-  route('login', './routes/login-route.tsx'),
-  route('signup', './routes/signup-route.tsx'),
 
+  // Authentication related routes under a layout
+  layout('./routes/auth-layout.tsx', [
+    route('login', './routes/login-route.tsx'),
+    route('signup', './routes/signup-route.tsx'),
+  ]),
   // Protected routes under a layout
   layout('./routes/protected-layout.tsx', [
     route('dashboard', './routes/dashboard-route.tsx'),
