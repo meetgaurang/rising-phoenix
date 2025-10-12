@@ -5,15 +5,19 @@ import type { LoginFormValues } from './loginFormSchema';
 
 export function LoginContainer() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | undefined>();
 
   const handleGoogleLogin = async () => {
     setLoading(true);
-    const { error, data } = await supabaseClient.auth.signInWithOAuth({
+    const { error } = await supabaseClient.auth.signInWithOAuth({
       provider: 'google',
     });
     if (error) {
-      console.error(error.message);
+      setError(error.message);
+    } else {
+      setError(undefined);
     }
+
     setLoading(false);
   };
 
@@ -24,7 +28,9 @@ export function LoginContainer() {
       password: data.password,
     });
     if (error) {
-      console.error(error.message);
+      setError(error.message);
+    } else {
+      setError(undefined);
     }
     setLoading(false);
   };
@@ -34,6 +40,7 @@ export function LoginContainer() {
       onEmailLogin={handleEmailLogin}
       onGoogleLogin={handleGoogleLogin}
       loading={loading}
+      error={error}
     />
   );
 }

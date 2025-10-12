@@ -1,18 +1,7 @@
-import { LoginForm } from './LoginForm';
-import type { LoginFormValues } from './loginFormSchema';
+import { LoginForm, type LoginFormProps } from './LoginForm';
 
-export type LoginProps = {
-  onEmailLogin: (data: LoginFormValues) => Promise<void>;
-  onGoogleLogin: () => void;
-  loading: boolean;
-};
+export type LoginProps = LoginFormProps;
 
 export function Login(props: LoginProps) {
-  return (
-    <LoginForm
-      onEmailLogin={props.onEmailLogin}
-      onGoogleLogin={props.onGoogleLogin}
-      loading={props.loading}
-    />
-  );
+  return <LoginForm {...props} />;
 }

@@ -12,7 +12,7 @@ export const signUpFormSchema = z
       .max(50, { message: 'Last name must be less than 50 characters' }),
     password: z
       .string()
-      .min(8, { message: 'Password must be at least 8 characters' })
+      .min(8, { message: 'Password must be at least 8 characters long' })
       .regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/, {
         message:
           'Password must contain at least one uppercase letter, one lowercase letter, and one number',

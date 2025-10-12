@@ -5,6 +5,7 @@ import type { SignUpFormValues } from './signUpFormSchema';
 
 export function SignUpContainer() {
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | undefined>();
 
   const handleGoogleSignUp = async () => {
     setLoading(true);
