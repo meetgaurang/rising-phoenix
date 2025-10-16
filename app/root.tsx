@@ -9,6 +9,7 @@ import {
 
 import type { Route } from './+types/root';
 import './app.css';
+import './styles/autofill.css';
 import { AuthProvider } from './core/AuthProvider';
 
 export const links: Route.LinksFunction = () => [
