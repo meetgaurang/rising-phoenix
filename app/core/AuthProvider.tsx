@@ -1,6 +1,11 @@
 import type { Session } from '@supabase/supabase-js';
 import { Spinner } from 'components/ui/shadcn-io/spinner';
-import { type PropsWithChildren, useEffect, useState } from 'react';
+import {
+  type PropsWithChildren,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react';
 import { useNavigate } from 'react-router';
 import { ScreenCenter } from '~/components/ui/ScreenCenter';
 import { supabaseClient } from '~/supabase';
@@ -12,15 +17,23 @@ import {
 
 export function AuthProvider({ children }: PropsWithChildren) {
   const navigate = useNavigate();
-  const [session, setSession] = useState<SessionDetails | undefined>(null);
+  const [session, setSession] = useState<SessionDetails | undefined>();
   const [loading, setLoading] = useState(true);
+
+  const handleLogoutClick = useCallback(async () => {
+    await supabaseClient.auth.signOut();
+    setSession(undefined);
+    navigate('/login');
+  }, [navigate]);
 
   useEffect(() => {
     supabaseClient.auth
       .getSession()
       .then((response: { data: { session: Session | null } }) => {
         if (response.data.session) {
-          setSession(mapSessionDetails(response.data.session));
+          setSession(
+            mapSessionDetails(response.data.session, handleLogoutClick),
+          );
         }
         setLoading(false);
       });
@@ -30,7 +43,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     } = supabaseClient.auth.onAuthStateChange(
       (_event, sessionDetails: Session | null) => {
         if (sessionDetails) {
-          setSession(mapSessionDetails(sessionDetails));
+          setSession(mapSessionDetails(sessionDetails, handleLogoutClick));
         } else {
           setSession(undefined);
         }
@@ -42,7 +55,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
     );
 
     return () => subscription.unsubscribe();
-  }, [navigate]);
+  }, [navigate, handleLogoutClick]);
 
   if (loading) {
     return (

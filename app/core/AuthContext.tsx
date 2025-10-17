@@ -7,17 +7,24 @@ export type SessionDetails = Pick<Session, 'access_token'> & {
     name: string;
     fullName: string;
     email: string;
+    avatarURL?: string;
   };
+  onLogoutClick: () => void;
 };
 
-export const mapSessionDetails = (session: Session): SessionDetails => ({
+export const mapSessionDetails = (
+  session: Session,
+  onLogoutClick: () => void,
+): SessionDetails => ({
   access_token: session.access_token,
   user: {
     id: session.user.id,
     name: session.user.user_metadata.user_name,
     fullName: session.user.user_metadata.full_name,
     email: session.user.email || '',
+    avatarURL: session.user.user_metadata.avatar_url,
   },
+  onLogoutClick,
 });
 
 export const AuthContext = createContext<SessionDetails | undefined>(undefined);
