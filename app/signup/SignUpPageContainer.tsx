@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { supabaseClient } from '~/supabase';
-import { SignUp } from './SignUp';
+import { SignUpPage } from './SignUpPage';
 import type { SignUpFormValues } from './signUpFormSchema';
 
-export function SignUpContainer() {
+export function SignUpPageContainer() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>();
 
@@ -13,7 +13,9 @@ export function SignUpContainer() {
       provider: 'google',
     });
     if (error) {
-      console.error(error.message);
+      setError(error.message);
+    } else {
+      setError(undefined);
     }
     setLoading(false);
   };
@@ -32,16 +34,17 @@ export function SignUpContainer() {
       },
     });
     if (error) {
-      console.error(error.message);
+      setError(error.message);
     } else {
       // Show success message or redirect
+      setError(undefined);
       console.log('Please check your email to confirm your account');
     }
     setLoading(false);
   };
 
   return (
-    <SignUp
+    <SignUpPage
       onEmailSignUp={handleEmailSignUp}
       onGoogleSignUp={handleGoogleSignUp}
       loading={loading}

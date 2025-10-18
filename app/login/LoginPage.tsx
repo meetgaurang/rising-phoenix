@@ -1,7 +1,7 @@
 import { LoginForm, type LoginFormProps } from './LoginForm';
 
-export type LoginProps = LoginFormProps;
+export type LoginPageProps = LoginFormProps;
 
-export function Login(props: LoginProps) {
+export function LoginPage(props: LoginPageProps) {
   return <LoginForm {...props} />;
 }

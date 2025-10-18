@@ -1,7 +1,7 @@
 import { SignUpForm, type SignUpFormProps } from './SignUpForm';
 
-export type SignUpProps = SignUpFormProps;
+export type SignUpPageProps = SignUpFormProps;
 
-export function SignUp(props: SignUpProps) {
+export function SignUpPage(props: SignUpPageProps) {
   return <SignUpForm {...props} />;
 }

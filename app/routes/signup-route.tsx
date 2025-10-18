@@ -1,4 +1,4 @@
-import { SignUpContainer } from '~/signup/SignUpContainer';
+import { SignUpPageContainer } from '~/signup/SignUpPageContainer';
 import type { Route } from './+types/signup-route';
 
 // biome-ignore lint/correctness/noUnusedFunctionParameters: Might be used later
@@ -13,5 +13,5 @@ export function meta(args: Route.MetaArgs) {
 }
 
 export default function SignUpRoute() {
-  return <SignUpContainer />;
+  return <SignUpPageContainer />;
 }

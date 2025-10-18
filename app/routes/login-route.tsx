@@ -1,4 +1,4 @@
-import { LoginContainer } from '~/login/LoginContainer';
+import { LoginPageContainer } from '~/login/LoginPageContainer';
 import type { Route } from './+types/login-route';
 
 // biome-ignore lint/correctness/noUnusedFunctionParameters: Might be used later
@@ -13,5 +13,5 @@ export function meta(args: Route.MetaArgs) {
 }
 
 export default function LoginRoute() {
-  return <LoginContainer />;
+  return <LoginPageContainer />;
 }

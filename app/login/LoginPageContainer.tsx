@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { supabaseClient } from '~/supabase';
-import { Login } from './Login';
+import { LoginPage } from './LoginPage';
 import type { LoginFormValues } from './loginFormSchema';
 
-export function LoginContainer() {
+export function LoginPageContainer() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | undefined>();
 
@@ -36,7 +36,7 @@ export function LoginContainer() {
   };
 
   return (
-    <Login
+    <LoginPage
       onEmailLogin={handleEmailLogin}
       onGoogleLogin={handleGoogleLogin}
       loading={loading}
