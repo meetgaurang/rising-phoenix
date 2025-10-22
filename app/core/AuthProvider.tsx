@@ -48,7 +48,7 @@ export function AuthProvider({ children }: PropsWithChildren) {
           setSession(undefined);
         }
         if (_event === 'SIGNED_IN') {
-          navigate('/dashboard');
+          navigate('/dashboard/profile');
         }
         setLoading(false);
       },

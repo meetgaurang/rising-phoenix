@@ -19,7 +19,10 @@ type Pages = {
   '/signup': {
     params: {};
   };
-  '/dashboard': {
+  '/dashboard/profile': {
+    params: {};
+  };
+  '/dashboard/settings': {
     params: {};
   };
 };
@@ -27,7 +30,12 @@ type Pages = {
 type RouteFiles = {
   'root.tsx': {
     id: 'root';
-    page: '/' | '/login' | '/signup' | '/dashboard';
+    page:
+      | '/'
+      | '/login'
+      | '/signup'
+      | '/dashboard/profile'
+      | '/dashboard/settings';
   };
   'routes/welcome-route.tsx': {
     id: 'routes/welcome-route';
@@ -47,10 +55,18 @@ type RouteFiles = {
   };
   './routes/protected-layout.tsx': {
     id: 'routes/protected-layout';
-    page: '/dashboard';
+    page: '/dashboard/profile' | '/dashboard/settings';
   };
-  './routes/dashboard-route.tsx': {
-    id: 'routes/dashboard-route';
-    page: '/dashboard';
+  './routes/dashboard-layout.tsx': {
+    id: 'routes/dashboard-layout';
+    page: '/dashboard/profile' | '/dashboard/settings';
+  };
+  './routes/profile-route.tsx': {
+    id: 'routes/profile-route';
+    page: '/dashboard/profile';
+  };
+  './routes/settings-route.tsx': {
+    id: 'routes/settings-route';
+    page: '/dashboard/settings';
   };
 };

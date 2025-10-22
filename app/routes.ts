@@ -15,9 +15,10 @@ export default [
   ]),
   // Protected routes under a layout
   layout('./routes/protected-layout.tsx', [
-    route('dashboard', './routes/dashboard-route.tsx'),
-    // Add more protected routes here as needed
-    // route("profile", "./routes/profile-route.tsx"),
-    // route("settings", "./routes/settings-route.tsx"),
+    // As of now, all protected routes under DashboardLayout
+    layout('./routes/dashboard-layout.tsx', [
+      route('dashboard/profile', './routes/profile-route.tsx'),
+      route('dashboard/settings', './routes/settings-route.tsx'),
+    ]),
   ]),
 ] satisfies RouteConfig;

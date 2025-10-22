@@ -10,7 +10,7 @@ export function PublicRoute({ children }: PublicRouteProps) {
 
   // If user is authenticated, redirect to dashboard
   if (auth) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to="/dashboard/profile" replace />;
   }
 
   // If not authenticated, show the public page (login/signup)
