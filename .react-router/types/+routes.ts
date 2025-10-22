@@ -19,6 +19,9 @@ type Pages = {
   '/signup': {
     params: {};
   };
+  '/dashboard': {
+    params: {};
+  };
   '/dashboard/profile': {
     params: {};
   };
@@ -34,6 +37,7 @@ type RouteFiles = {
       | '/'
       | '/login'
       | '/signup'
+      | '/dashboard'
       | '/dashboard/profile'
       | '/dashboard/settings';
   };
@@ -55,11 +59,15 @@ type RouteFiles = {
   };
   './routes/protected-layout.tsx': {
     id: 'routes/protected-layout';
-    page: '/dashboard/profile' | '/dashboard/settings';
+    page: '/dashboard' | '/dashboard/profile' | '/dashboard/settings';
   };
   './routes/dashboard-layout.tsx': {
     id: 'routes/dashboard-layout';
-    page: '/dashboard/profile' | '/dashboard/settings';
+    page: '/dashboard' | '/dashboard/profile' | '/dashboard/settings';
+  };
+  './routes/dashboard-route.tsx': {
+    id: 'routes/dashboard-route';
+    page: '/dashboard';
   };
   './routes/profile-route.tsx': {
     id: 'routes/profile-route';

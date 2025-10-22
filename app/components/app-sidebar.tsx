@@ -16,17 +16,17 @@ const navigationConfig = {
   navMain: [
     {
       title: 'Dashboard',
-      url: '#',
+      url: '/dashboard',
       icon: LayoutDashboard,
       isActive: true,
       items: [
         {
           title: 'Profile',
-          url: 'profile',
+          url: '/dashboard/profile',
         },
         {
           title: 'Settings',
-          url: 'settings',
+          url: '/dashboard/settings',
         },
       ],
     },
