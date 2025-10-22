@@ -1,6 +1,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { AlertCircleIcon } from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { Link } from 'react-router';
 import { Alert, AlertTitle } from '~/components/ui/alert';
 import { Button } from '~/components/ui/button';
 import {
@@ -158,9 +159,9 @@ export function SignUpForm({
 
           <div className="mt-4 text-center text-sm">
             Already have an account?{' '}
-            <a href="/login" className="underline underline-offset-4">
+            <Link to="/login" className="underline underline-offset-4">
               Sign in
-            </a>
+            </Link>
           </div>
         </CardContent>
       </Card>

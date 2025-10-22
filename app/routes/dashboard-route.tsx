@@ -1,7 +1,6 @@
 import { DashboardPageContainer } from '~/dashboard/DashboardPageContainer';
-import type { Route } from './+types/dashboard-route';
 
-export function meta(args: Route.MetaArgs) {
+export function meta() {
   return [
     { title: 'Dashboard' },
     { name: 'description', content: 'Dashboard page' },
