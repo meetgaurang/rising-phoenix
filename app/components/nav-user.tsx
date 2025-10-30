@@ -24,6 +24,7 @@ import {
   useSidebar,
 } from '~/components/ui/sidebar';
 import { useAuth } from '~/core/AuthContext';
+import { getInitials } from '~/core/getInitials';
 
 export function NavUser() {
   const auth = useAuth();
@@ -43,7 +44,9 @@ export function NavUser() {
                   src={auth?.user.avatarURL}
                   alt={auth?.user.fullName}
                 />
-                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                <AvatarFallback className="rounded-lg">
+                  {getInitials(auth?.user.fullName ?? '')}
+                </AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
                 <span className="truncate font-medium">
@@ -67,7 +70,9 @@ export function NavUser() {
                     src={auth?.user.avatarURL}
                     alt={auth?.user.fullName}
                   />
-                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                  <AvatarFallback className="rounded-lg">
+                    {getInitials(auth?.user.fullName ?? '')}
+                  </AvatarFallback>
                 </Avatar>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-medium">
